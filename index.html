@@ -98,7 +98,7 @@ button:hover { background: #ffe3ef; }
 
   width: 95%;
   max-width: 600px;
-  height: 85vh; /* BIG box */
+  height: 85vh; /* BIG box for desktop */
 
   padding: 20px;
 
@@ -110,9 +110,9 @@ button:hover { background: #ffe3ef; }
 }
 
 #wifeCard img {
-  width: 100%;       /* fill almost entire box width */
-  height: 82%;       /* nearly full box height */
-  object-fit: cover; /* maintain aspect ratio */
+  width: 100%;
+  height: 82%;
+  object-fit: cover;
   border-radius: 20px;
 }
 
@@ -121,8 +121,9 @@ button:hover { background: #ffe3ef; }
   font-size: 2rem;
   font-weight: bold;
   text-shadow: 0 0 10px #ffb6c1;
-  margin-top: 10px;  /* small gap between image and text */
+  margin-top: 10px;
 }
+
 
 
 
@@ -134,17 +135,25 @@ button:hover { background: #ffe3ef; }
   max-width: 450px;
 }
 @media (max-width: 600px) {
-
   #wifeCard {
+    width: 95%;
+    max-width: none;
+    height: auto;          /* let box grow */
+    padding: 15px;
+  }
+
+  #wifeCard img {
     width: 100%;
-    height: 90vh;
+    height: auto;          /* scale image automatically */
+    max-height: 80vh;      /* prevent it from exceeding screen */
   }
 
   .valentineText {
     font-size: 1.8rem;
+    margin-top: 10px;
   }
-
 }
+
 
 </style>
 </head>
@@ -229,6 +238,7 @@ setInterval(createFloating, 300);
 </script>
 </body>
 </html>
+
 
 
 
