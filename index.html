@@ -137,26 +137,29 @@ button:hover { background: #ffe3ef; }
 }
 @media (max-width: 600px) {
   #wifeCard {
-    height: auto !important;       /* let box grow */
-    padding: 15px;
-    justify-content: flex-start;   /* start content from top */
-    max-height: 90vh;              /* don’t exceed viewport */
-    overflow-y: auto;              /* allow scroll if needed */
+    width: 98vw;            /* almost full screen width */
+    max-width: none;
+    height: auto;           /* let height adjust automatically */
+    padding: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;      /* allow full image */
+    text-align: center;
   }
 
   #wifeCard img {
-    width: 100%;
-    height: auto;                  /* scale image naturally */
-    max-height: 70vh;              /* image fills most of screen */
+    width: 100%;            /* fill box width */
+    height: auto;           /* scale height proportionally */
+    max-height: none;       /* allow natural height */
+    border-radius: 20px;
     object-fit: cover;
   }
 
   .valentineText {
     font-size: 1.8rem;
-    margin-top: 15px;
+    margin-top: 10px;
   }
 }
-
 
 
 </style>
@@ -200,13 +203,14 @@ button:hover { background: #ffe3ef; }
     <button id="noBtn">No</button>
   </div>
 </div>
-<!-- Page 5: Wife Picture + Message -->
+  
 <div class="screen" id="page4">
   <div id="wifeCard">
-    <img src="flo.webp" alt="Wife Picture">
+    <img src="dawa.jpg" alt="Wife Picture">
     <h2 class="valentineText">Happy Valentine’s Day Dear ❤️</h2>
   </div>
 </div>
+
 
 
 <script>
@@ -242,6 +246,7 @@ setInterval(createFloating, 300);
 </script>
 </body>
 </html>
+
 
 
 
