@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Valentine Surprise ❤️</title>
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: #ffc0cb; /* pink background */
+  text-align: center;
+  overflow-x: hidden;
+  color: #ff1493;
+}
+
+/* Common card style for boxes */
+.card {
+  background: #fff;
+  color: #ff1493;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #ff69b4;
+  margin: 15px;
+  max-width: 400px;
+}
+
+/* Screens */
+.screen {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.active { display: flex; }
+
+/* Images */
+img {
+  max-width: 250px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px #ff69b4;
+}
+
+/* Buttons */
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  color: #ff1493;
+  font-weight: bold;
+  box-shadow: 2px 2px 6px #ff69b4;
+  transition: 0.3s;
+}
+
+button:hover { background: #ffe3ef; }
+
+/* No button running away */
+/* No button runs away but stays visible */
+#noBtn {
+  position: absolute;       /* absolute to move freely */
+  top: 50%;                 /* initial position */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;         /* smooth movement */
+}
+
+
+/* Floating hearts & flowers */
+.floating {
+  position: absolute;
+  font-size: 25px;
+  user-select: none;
+  pointer-events: none;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(-50px) rotate(0deg); }
+  to { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* Final Wife Section */
+#wifeCard {
+  display: flex;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ff69b4;
+  max-width: 800px;
+  padding: 20px;
+  gap: 20px;
+  align-items: flex-start;
+  margin: auto;
+}
+
+#wifeCard img {
+  max-width: 350px;
+  border-radius: 20px;
+}
+
+#letterBox {
+  color: #ff1493;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  max-width: 450px;
+}
+
+/* --- Media Queries for Mobile --- */
+@media (max-width: 600px) {
+  #wifeCard {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    max-width: 90%;
+  }
+  #wifeCard img {
+    max-width: 90%;
+    margin-bottom: 15px;
+  }
+  #letterBox {
+    max-width: 100%;
+    font-size: 1rem;
+    text-align: center;
+  }
+  button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  .card {
+    max-width: 90%;
+    padding: 15px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Page 1 -->
+<div class="screen active" id="page1">
+  <div class="card">
+    <img src="pic1.jpg" alt="Cute Cat">
+    <h2>Hey, I want to ask you something...</h2>
+    <button onclick="nextPage(2)">Yes</button>
+    <button onclick="nextPage(1.1)">No</button>
+  </div>
+</div>
+
+<!-- Page 2: How dare you -->
+<div class="screen" id="page1.1">
+  <div class="card">
+    <img src="pic2.webp" alt="Cute Cat">
+    <h2>How dare you!</h2>
+    <button onclick="nextPage(1)">Back</button>
+  </div>
+</div>
+
+<!-- Page 3: Are you ready? -->
+<div class="screen" id="page2">
+  <div class="card">
+    <img src="pic3.webp" alt="Cute Cat">
+    <h2>Good my cutie! Are you ready?</h2>
+    <button onclick="nextPage(3)">Yes</button>
+  </div>
+</div>
+
+<!-- Page 4: Will you be my Valentine -->
+<div class="screen" id="page3">
+  <div class="card">
+    <img src="flower.webp" alt="Cute Cat">
+    <h2>Will you be my Valentine?</h2>
+    <button onclick="nextPage(4)">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+</div>
+
+<!-- Page 5: Wife Section -->
+<div class="screen" id="page4">
+  <div id="wifeCard">
+    <img src="dawa.jpg" alt="Wife Picture">
+    <div id="letterBox">
+      <h2>My Dearest Love ❤️</h2>
+      <p>From the first moment I met you, I knew my life had changed forever. Every day with you is a new adventure filled with love, laughter, and warmth. Your smile brightens my darkest days, your touch calms my restless heart, and your love completes me in ways words cannot fully describe.</p>
+      <p>We have shared countless memories, dreams, and moments that I will cherish forever. You are my partner, my confidant, my wife, and the love of my life. With you, I have found a happiness I never knew existed, and a love so deep it fills my soul.</p>
+      <p>On this special day, I want to remind you that you are my today, my tomorrow, and my forever. Thank you for being you, for loving me, and for making every day extraordinary. Will you be my Valentine?</p>
+      <p>Forever yours, <br>💖 My Love</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ---- Navigation ----
+function nextPage(id){
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('page'+id).classList.add('active');
+}
+
+// ---- Make No button run away on hover ----
+const noBtn = document.getElementById('noBtn');
+noBtn.addEventListener('mouseenter', function(){
+  // random positions within viewport
+  const x = Math.random() * 80; // 0% to 80% left
+  const y = Math.random() * 80; // 0% to 80% top
+  noBtn.style.left = x + 'vw';
+  noBtn.style.top = y + 'vh';
+});
+
+
+// ---- Floating hearts & flowers ----
+function createFloating(){
+  const items = ["❤️","🌸","💖"];
+  const float = document.createElement("div");
+  float.className = "floating";
+  float.innerHTML = items[Math.floor(Math.random()*items.length)];
+  float.style.left = Math.random()*100+"vw";
+  float.style.fontSize = (Math.random()*20+20)+"px";
+  document.body.appendChild(float);
+  setTimeout(()=>float.remove(),10000);
+}
+setInterval(createFloating, 300);
+</script>
+</body>
+</html>
