@@ -23,91 +23,35 @@ body {
   margin: 15px;
   max-width: 400px;
 }
-
-/* Screens */
+/* COMMON SCREEN STYLING */
 .screen {
   display: none;
   width: 100%;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px;
+  padding: 0; /* remove extra padding for last page */
   box-sizing: border-box;
 }
 
-.active { display: flex; }
+.active { display: flex; justify-content: center; align-items: center; flex-direction: column; }
 
-/* Images */
-img {
-  max-width: 250px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 15px #ff69b4;
-}
-
-/* Buttons */
-button {
-  padding: 12px 25px;
-  margin: 10px;
-  font-size: 18px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  background: #fff;
-  color: #ff1493;
-  font-weight: bold;
-  box-shadow: 2px 2px 6px #ff69b4;
-  transition: 0.3s;
-}
-
-button:hover { background: #ffe3ef; }
-
-/* No button running away */
-/* No button runs away but stays visible */
-#noBtn {
-  position: absolute;       /* absolute to move freely */
-  top: 50%;                 /* initial position */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.3s;         /* smooth movement */
-}
-
-
-/* Floating hearts & flowers */
-.floating {
-  position: absolute;
-  font-size: 25px;
-  user-select: none;
-  pointer-events: none;
-  animation: float 10s linear infinite;
-}
-
-@keyframes float {
-  from { transform: translateY(-50px) rotate(0deg); }
-  to { transform: translateY(100vh) rotate(360deg); }
-}
-
+/* WIFE CARD DESKTOP */
 #wifeCard {
   background: #fff;
   border-radius: 25px;
   box-shadow: 0 0 25px #ff69b4;
-
   width: 95%;
   max-width: 600px;
-  height: 85vh; /* desktop box */
-
+  height: 85vh;
   padding: 20px;
-
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* start from top */
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
-  overflow: hidden; /* clip extra for desktop */
+  overflow: hidden;
 }
 
 #wifeCard img {
@@ -125,46 +69,39 @@ button:hover { background: #ffe3ef; }
   margin-top: 10px;
 }
 
-
-
-
-#letterBox {
-  color: #ff1493;
-  text-align: left;
-  font-size: 1.1rem;
-  line-height: 1.5;
-  max-width: 450px;
-}
-/* ================== LAST PAGE MOBILE FIX ================== */
+/* LAST PAGE MOBILE FIX */
 @media (max-width: 600px) {
+  /* Remove flex container from screen for last page */
+  .screen.active#page4 {
+    display: block; /* normal block flow */
+    height: auto;   /* let content grow */
+    padding: 0;
+  }
+
   #wifeCard {
-    width: 100vw;          /* full phone width */
-    max-width: none;        /* ignore desktop max-width */
-    height: auto;           /* let box grow naturally */
-    padding: 0;             /* remove inner padding for full width image */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    width: 100vw;      /* full width */
+    height: auto;      /* automatic height */
+    max-width: none;   /* ignore desktop limit */
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
     text-align: center;
-    box-sizing: border-box; /* include padding in width if any */
   }
 
   #wifeCard img {
-    width: 100%;            /* fill entire box width */
-    height: auto;           /* keep aspect ratio */
-    border-radius: 0;       /* optional: remove radius for full width */
+    width: 100%;       /* fill width */
+    height: auto;      /* maintain aspect ratio */
+    border-radius: 0;
     object-fit: cover;
   }
 
   .valentineText {
     font-size: 2rem;
     margin: 10px 0 20px 0;
-    color: #ff1493;
-    font-weight: bold;
-    text-shadow: 0 0 10px #ffb6c1;
   }
 }
+
 
 
 
@@ -252,6 +189,7 @@ setInterval(createFloating, 300);
 </script>
 </body>
 </html>
+
 
 
 
