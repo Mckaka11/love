@@ -135,31 +135,37 @@ button:hover { background: #ffe3ef; }
   line-height: 1.5;
   max-width: 450px;
 }
+/* ================== LAST PAGE MOBILE FIX ================== */
 @media (max-width: 600px) {
   #wifeCard {
-    width: 98vw;            /* almost full screen width */
-    max-width: none;
-    height: auto;           /* let height adjust automatically */
-    padding: 10px;
+    width: 100vw;          /* full phone width */
+    max-width: none;        /* ignore desktop max-width */
+    height: auto;           /* let box grow naturally */
+    padding: 0;             /* remove inner padding for full width image */
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    overflow: visible;      /* allow full image */
     text-align: center;
+    box-sizing: border-box; /* include padding in width if any */
   }
 
   #wifeCard img {
-    width: 100%;            /* fill box width */
-    height: auto;           /* scale height proportionally */
-    max-height: none;       /* allow natural height */
-    border-radius: 20px;
+    width: 100%;            /* fill entire box width */
+    height: auto;           /* keep aspect ratio */
+    border-radius: 0;       /* optional: remove radius for full width */
     object-fit: cover;
   }
 
   .valentineText {
-    font-size: 1.8rem;
-    margin-top: 10px;
+    font-size: 2rem;
+    margin: 10px 0 20px 0;
+    color: #ff1493;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ffb6c1;
   }
 }
+
 
 
 </style>
@@ -246,6 +252,7 @@ setInterval(createFloating, 300);
 </script>
 </body>
 </html>
+
 
 
 
