@@ -110,9 +110,9 @@ button:hover { background: #ffe3ef; }
 }
 
 #wifeCard img {
-  width: 90%;
-  max-height: 60%;
-  object-fit: cover;
+  width: 100%;       /* fill almost entire box width */
+  height: 82%;       /* nearly full box height */
+  object-fit: cover; /* maintain aspect ratio */
   border-radius: 20px;
 }
 
@@ -121,7 +121,9 @@ button:hover { background: #ffe3ef; }
   font-size: 2rem;
   font-weight: bold;
   text-shadow: 0 0 10px #ffb6c1;
+  margin-top: 10px;  /* small gap between image and text */
 }
+
 
 
 #letterBox {
@@ -227,6 +229,7 @@ setInterval(createFloating, 300);
 </script>
 </body>
 </html>
+
 
 
 
