@@ -13,71 +13,53 @@ body {
   color: #ff1493;
 }
 
-/* Mobile-first full screen layout */
+/* Full phone screen layout */
 
 .screen {
   display: none;
-  width: 100%;
-  min-height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 25px 15px;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
   box-sizing: border-box;
 }
 
 .active {
-  display: block;
+  display: flex;
 }
 
-/* Big mobile cards */
+/* Card fills almost entire phone */
 
 .card {
   background: #fff;
   color: #ff1493;
-  padding: 25px;
+  width: 100%;
+  height: 100%;
   border-radius: 25px;
   box-shadow: 0 0 20px #ff69b4;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  font-size: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-/* Bigger images */
+/* Image fills card nicely */
 
-img {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 20px;
-  margin-bottom: 20px;
+.card img {
+  width: 90%;
+  max-height: 50vh;
+  object-fit: contain;
 }
 
-/* Bigger buttons */
+/* Buttons bigger */
 
 button {
-  width: 90%;
+  width: 80%;
   padding: 15px;
   font-size: 20px;
-  margin: 10px auto;
-  display: block;
 }
 
-/* Buttons */
-button {
-  padding: 12px 25px;
-  margin: 10px;
-  font-size: 18px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  background: #fff;
-  color: #ff1493;
-  font-weight: bold;
-  box-shadow: 2px 2px 6px #ff69b4;
-  transition: 0.3s;
-}
 
 button:hover { background: #ffe3ef; }
 
@@ -250,6 +232,7 @@ setInterval(createFloating, 300);
 </script>
 </body>
 </html>
+
 
 
 
