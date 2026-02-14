@@ -4,85 +4,124 @@
 <meta charset="UTF-8">
 <title>Valentine Surprise ❤️</title>
 <style>
-/* COMMON SCREEN STYLING */
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: #ffc0cb; /* pink background */
+  text-align: center;
+  overflow-x: hidden;
+  color: #ff1493;
+}
+
+/* Common card style for boxes */
+.card {
+  background: #fff;
+  color: #ff1493;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #ff69b4;
+  margin: 15px;
+  max-width: 400px;
+}
+
+/* Screens */
 .screen {
   display: none;
   width: 100%;
   height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 0; /* remove extra padding for last page */
+  padding: 10px;
   box-sizing: border-box;
 }
 
-.active { display: flex; justify-content: center; align-items: center; flex-direction: column; }
+.active { display: flex; }
 
-/* WIFE CARD DESKTOP */
-#wifeCard {
+/* Images */
+img {
+  max-width: 250px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px #ff69b4;
+}
+
+/* Buttons */
+button {
+  padding: 12px 25px;
+  margin: 10px;
+  font-size: 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
   background: #fff;
-  border-radius: 25px;
-  box-shadow: 0 0 25px #ff69b4;
-  width: 95%;
-  max-width: 600px;
-  height: 85vh;
-  padding: 20px;
+  color: #ff1493;
+  font-weight: bold;
+  box-shadow: 2px 2px 6px #ff69b4;
+  transition: 0.3s;
+}
+
+button:hover { background: #ffe3ef; }
+
+/* No button running away */
+/* No button runs away but stays visible */
+#noBtn {
+  position: absolute;       /* absolute to move freely */
+  top: 50%;                 /* initial position */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;         /* smooth movement */
+}
+
+
+/* Floating hearts & flowers */
+.floating {
+  position: absolute;
+  font-size: 25px;
+  user-select: none;
+  pointer-events: none;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(-50px) rotate(0deg); }
+  to { transform: translateY(100vh) rotate(360deg); }
+}
+
+/* Final Picture Section */
+#wifeCard {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  overflow: hidden;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ff69b4;
+  max-width: 800px;
+  padding: 20px;
+  margin: auto;
 }
 
 #wifeCard img {
   width: 100%;
-  height: 82%;
-  object-fit: cover;
+  max-width: 400px;
   border-radius: 20px;
+  box-shadow: 0 0 15px #ff69b4;
 }
 
-.valentineText {
-  color: #ff1493;
-  font-size: 2rem;
-  font-weight: bold;
-  text-shadow: 0 0 10px #ffb6c1;
-  margin-top: 10px;
-}
-
-/* LAST PAGE MOBILE FIX */
+/* Mobile Responsive */
 @media (max-width: 600px) {
-  /* Remove flex container from screen for last page */
-  .screen.active#page4 {
-    display: block; /* normal block flow */
-    height: auto;   /* let content grow */
-    padding: 0;
-  }
-
   #wifeCard {
-    width: 100vw;      /* full width */
-    height: auto;      /* automatic height */
-    max-width: none;   /* ignore desktop limit */
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-    display: block;
-    text-align: center;
+    max-width: 90%;
+    padding: 15px;
   }
 
   #wifeCard img {
-    width: 100%;       /* fill width */
-    height: auto;      /* maintain aspect ratio */
-    border-radius: 0;
-    object-fit: cover;
-  }
-
-  .valentineText {
-    font-size: 2rem;
-    margin: 10px 0 20px 0;
+    max-width: 100%;
   }
 }
-
 
 </style>
 </head>
@@ -125,14 +164,13 @@
     <button id="noBtn">No</button>
   </div>
 </div>
-  
+
+<!-- Page 5: Picture Only -->
 <div class="screen" id="page4">
   <div id="wifeCard">
-    <img src="napa.jpeg" alt="Wife Picture">
-    <h2 class="valentineText">Happy Valentine’s Day Dear ❤️</h2>
+    <img src="flo.jpg" alt="Wife Picture">
   </div>
 </div>
-
 
 
 <script>
@@ -168,15 +206,3 @@ setInterval(createFloating, 300);
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
