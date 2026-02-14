@@ -91,9 +91,9 @@ button:hover { background: #ffe3ef; }
   to { transform: translateY(100vh) rotate(360deg); }
 }
 
-/* Final Picture Section */
 #wifeCard {
   display: flex;
+  flex-direction: column; /* important */
   justify-content: center;
   align-items: center;
   background: #fff;
@@ -103,6 +103,7 @@ button:hover { background: #ffe3ef; }
   padding: 20px;
   margin: auto;
 }
+
 
 #wifeCard img {
   width: 100%;
@@ -121,6 +122,14 @@ button:hover { background: #ffe3ef; }
   #wifeCard img {
     max-width: 100%;
   }
+  .valentineText {
+  margin-top: 15px;
+  color: #ff1493;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
 }
 
 </style>
@@ -164,11 +173,11 @@ button:hover { background: #ffe3ef; }
     <button id="noBtn">No</button>
   </div>
 </div>
-
-<!-- Page 5: Picture Only -->
+<!-- Page 5: Picture + Text -->
 <div class="screen" id="page4">
   <div id="wifeCard">
     <img src="flo.webp" alt="Wife Picture">
+    <h2 class="valentineText">Happy Valentine Day Dear ❤️</h2>
   </div>
 </div>
 
@@ -206,4 +215,5 @@ setInterval(createFloating, 300);
 </script>
 </body>
 </html>
+
 
