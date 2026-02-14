@@ -13,40 +13,55 @@ body {
   color: #ff1493;
 }
 
-/* Common card style for boxes */
-.card {
-  background: #fff;
-  color: #ff1493;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 0 15px #ff69b4;
-  margin: 15px;
-  max-width: 400px;
-}
+/* Mobile-first full screen layout */
 
-/* Screens */
 .screen {
   display: none;
   width: 100%;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  min-height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px;
+  padding: 25px 15px;
   box-sizing: border-box;
 }
 
-.active { display: flex; }
+.active {
+  display: block;
+}
 
-/* Images */
+/* Big mobile cards */
+
+.card {
+  background: #fff;
+  color: #ff1493;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px #ff69b4;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Bigger images */
+
 img {
-  max-width: 250px;
+  width: 100%;
+  max-width: 100%;
   border-radius: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 0 15px #ff69b4;
+}
+
+/* Bigger buttons */
+
+button {
+  width: 90%;
+  padding: 15px;
+  font-size: 20px;
+  margin: 10px auto;
+  display: block;
 }
 
 /* Buttons */
@@ -235,6 +250,7 @@ setInterval(createFloating, 300);
 </script>
 </body>
 </html>
+
 
 
 
