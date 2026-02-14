@@ -111,17 +111,37 @@ button:hover { background: #ffe3ef; }
   border-radius: 20px;
   box-shadow: 0 0 15px #ff69b4;
 }
-
-/* Mobile Responsive */
+/* Better mobile scaling */
 @media (max-width: 600px) {
-  #wifeCard {
-    max-width: 90%;
-    padding: 15px;
+
+  .screen {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px;
   }
 
-  #wifeCard img {
+  .card {
+    width: 100%;
     max-width: 100%;
+    margin: 10px 0;
+    padding: 20px;
+    font-size: 18px;
   }
+
+  img {
+    max-width: 90%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 80%;
+    font-size: 18px;
+  }
+}
+
   .valentineText {
   margin-top: 15px;
   color: #ff1493;
@@ -215,5 +235,6 @@ setInterval(createFloating, 300);
 </script>
 </body>
 </html>
+
 
 
